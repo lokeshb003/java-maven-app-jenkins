@@ -18,18 +18,17 @@ pipeline {
       steps {
         sh 'mvn test'
         sh 'echo "Tested the Java Maven Applcation"'
+      }
       post {
         always {
           junit 'target/surefire-reports/*.xml'
         }
       }
+    }
+    stage('Deliver') {
+      steps {
+        sh 'java -jar target/my-app-1.0-SNAPSHOT.jar'
+        sh 'Successful!'
       }
-      stage('Deliver') {
-        steps {
-          sh 'java -jar target/my-app-1.0-SNAPSHOT.jar'
-          sh 'Successful!'
-        }
-      }
+    }
 }
-   
-      
