@@ -5,7 +5,6 @@ pipeline {
       args '-v /root/.m2:/root/.m2'
       }
     }
-  }
   stages {
     stage('Build the Java Maven Applcation') {
       steps {
