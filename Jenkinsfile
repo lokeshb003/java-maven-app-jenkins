@@ -26,7 +26,7 @@ pipeline {
     stage('Deliver') {
       steps {
         sh 'java -jar target/my-app-1.0-SNAPSHOT.jar'
-        sh 'Successful!'
+        sh 'echo "Successful!"'
       }
     }
   }
