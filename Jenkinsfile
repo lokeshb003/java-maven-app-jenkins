@@ -4,11 +4,10 @@ pipeline {
       image 'maven:3-alpine'
       args '-v /root/.m2:/root/.m2'
       }
-    }
+  }
   stages {
     stage('Build the Java Maven Applcation') {
       steps {
-      
         sh 'mvn -B -DskipTests clean package'
         sh 'echo "Built the Maven Application"'
       }
@@ -30,4 +29,5 @@ pipeline {
         sh 'Successful!'
       }
     }
+  }
 }
